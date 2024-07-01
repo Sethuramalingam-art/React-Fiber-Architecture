@@ -1,0 +1,14 @@
+https://dzone.com/articles/understanding-of-react-fiber-architecture
+
+React 16.0 was released with an update to the React core algorithm. This new core architecture is named “Fiber.” 
+Facebook has completely rewritten the internals of React from the ground-up while keeping the public API essentially unchanged; in simple terms, 
+it means only changing the engine of a running car.
+
+With this release, some new features are also added, like Asynchronous Rendering, Portals, Error Boundaries, Fragments (i.e. return array of elements). Incremental rendering is the headline addition to React, which adds the ability to split rendering work into chunks.
+
+React Fiber is the new reconciliation algorithm. Reconciliation is the process of comparing or diffing old trees with a new tree in order to find what is changed or modified. In the original reconciliation algorithm (now called Stack Reconciler), the processing of component trees was done synchronously in a single pass, so the main thread was not available for other UI related tasks like animation, layouts, and gesture handling. Fiber Reconciler has different goals:
+
+Ability to split interruptible work in chunks.
+Ability to prioritize, rebase, and reuse work in progress.
+Ability to yield back and forth between parents and children to support layout in React.
+Ability to return multiple elements from render().
